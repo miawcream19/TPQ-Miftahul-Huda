@@ -7,3 +7,5 @@ Thumbs.db
 # Arsip & screenshot lokal (tidak ikut push ke GitHub/Vercel)
 *.zip
 ss project/
+WhatsApp Image*.jpeg
+foto/
