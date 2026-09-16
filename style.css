@@ -1,0 +1,295 @@
+/* ===== TOKEN ===== */
+:root {
+  --green: #2f8f5b;
+  --green-dark: #1f6b42;
+  --green-pale: #eaf7ef;
+  --ink: #1f2a22;
+  --ink-soft: #5b6b60;
+  --border: #dfeee5;
+  --radius-sm: 10px;
+  --radius-lg: 20px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', 'Ubuntu', system-ui, sans-serif;
+  color: var(--ink);
+  background: #fff;
+  line-height: 1.65;
+}
+
+h1, h2, h3 { line-height: 1.3; font-weight: 700; }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+a { text-decoration: none; color: inherit; }
+.center { text-align: center; }
+
+.section-eyebrow {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 26px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.btn-primary { background: var(--green); color: #fff; }
+.btn-primary:hover { background: var(--green-dark); }
+.btn-ghost { background: transparent; border: 1.5px solid var(--border); color: var(--ink); }
+.btn-ghost:hover { border-color: var(--green); }
+.btn-block { width: 100%; text-align: center; margin-top: 20px; }
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  gap: 20px;
+}
+.logo { font-weight: 800; font-size: 1.2rem; color: var(--green-dark); }
+.nav-links { display: flex; gap: 26px; font-weight: 500; font-size: 0.92rem; color: var(--ink-soft); flex: 1; margin-left: 30px; }
+.nav-links a:hover { color: var(--green-dark); }
+.nav-cta { font-size: 0.88rem; padding: 10px 20px; }
+.nav-toggle-input { display: none; }
+.nav-toggle { display: none; cursor: pointer; font-size: 1.4rem; }
+
+/* ===== HERO ===== */
+.hero { background: var(--green-pale); padding: 70px 0 60px; }
+.hero-eyebrow { color: var(--green-dark); font-weight: 700; margin-bottom: 14px; }
+.hero-text h1 { font-size: 2.4rem; max-width: 680px; margin-bottom: 18px; color: var(--ink); }
+.hero-desc { color: var(--ink-soft); max-width: 560px; margin-bottom: 28px; }
+.hero-actions { display: flex; gap: 14px; margin-bottom: 46px; }
+.hero-actions .btn-ghost { background: #fff; }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 560px;
+}
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  text-align: center;
+}
+.stat-card strong { display: block; font-size: 1.5rem; color: var(--green-dark); }
+.stat-card span { font-size: 0.82rem; color: var(--ink-soft); }
+
+/* ===== SECTION UMUM ===== */
+section:not(.hero) { padding: 80px 0; }
+section h2 { font-size: 1.9rem; margin-bottom: 16px; }
+.program h2, .pengajar h2, .galeri h2, .testimoni h2 { margin: 0 auto 40px; max-width: 560px; }
+
+/* ===== TENTANG ===== */
+.tentang-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+.tentang-media-box {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;          /* foto dipotong rapi, tidak gepeng */
+  object-position: center;
+  /* gradasi jadi warna cadangan kalau foto belum ada / gagal dimuat */
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  border-radius: var(--radius-lg);
+}
+.tentang-copy p { color: var(--ink-soft); margin-bottom: 18px; }
+.tentang-poin { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.tentang-poin li {
+  padding-left: 26px;
+  position: relative;
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+.tentang-poin li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ===== PROGRAM ===== */
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.program-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+}
+.program-icon {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--green-pale);
+  color: var(--green-dark);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.program-card p { color: var(--ink-soft); font-size: 0.9rem; margin-top: 8px; }
+
+/* ===== JADWAL ===== */
+.jadwal { background: var(--green-pale); }
+.jadwal-inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+.jadwal-copy p { color: var(--ink-soft); margin-top: 12px; }
+.jadwal-table {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.jadwal-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 16px 22px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--border);
+}
+.jadwal-row:last-child { border-bottom: none; }
+.jadwal-head {
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+
+/* ===== PENGAJAR ===== */
+.pengajar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.pengajar-card { text-align: center; }
+.pengajar-avatar {
+  display: block;
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  object-fit: cover;          /* wajib, biar foto tidak lonjong di lingkaran */
+  object-position: center top; /* wajah biasanya di bagian atas foto */
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-pale) 100%);
+  margin: 0 auto 16px;
+}
+.pengajar-card span { color: var(--ink-soft); font-size: 0.85rem; }
+
+/* ===== GALERI ===== */
+.galeri-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 140px);
+  gap: 14px;
+}
+.galeri-item {
+  display: block;
+  width: 100%;
+  height: 100%;               /* wajib: tinggi baris sudah dikunci grid */
+  object-fit: cover;
+  object-position: center;
+  background: var(--green-pale);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+.galeri-besar { grid-row: span 2; grid-column: span 1; background: var(--green); }
+
+/* ===== TESTIMONI ===== */
+.testimoni { background: var(--green-pale); }
+.testimoni-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.testimoni-card {
+  background: #fff;
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  border: 1px solid var(--border);
+}
+.testimoni-card p { font-size: 0.96rem; margin-bottom: 14px; }
+.testimoni-card cite { font-style: normal; font-size: 0.82rem; color: var(--ink-soft); }
+
+/* ===== PENDAFTARAN ===== */
+.pendaftaran-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+.pendaftaran-inner p { color: var(--ink-soft); margin-top: 12px; }
+.pendaftaran-syarat {
+  background: var(--green-pale);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+}
+.pendaftaran-syarat h3 { margin-bottom: 14px; font-size: 1.05rem; }
+.pendaftaran-syarat ul { list-style: disc; margin-left: 20px; color: var(--ink-soft); font-size: 0.92rem; }
+.pendaftaran-syarat li { margin-bottom: 8px; }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--green-dark); color: #d7ede1; padding: 50px 0 24px; }
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+.footer-logo { color: #fff; margin-bottom: 8px; }
+.footer-desc { font-size: 0.88rem; }
+.footer-col h4 { color: #fff; font-size: 0.9rem; margin-bottom: 12px; }
+.footer-col a, .footer-col span { display: block; font-size: 0.88rem; margin-bottom: 8px; color: #cfe9da; }
+.footer-copy { text-align: center; font-size: 0.8rem; color: #a9d3bb; margin-top: 20px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 860px) {
+  .tentang-inner, .jadwal-inner, .pendaftaran-inner { grid-template-columns: 1fr; }
+  .program-grid { grid-template-columns: repeat(2, 1fr); }
+  .pengajar-grid, .testimoni-grid { grid-template-columns: 1fr; }
+  .galeri-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 120px); }
+  .galeri-besar { grid-row: span 1; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+}
+@media (max-width: 860px) {
+  .nav-toggle-input:checked ~ .nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    gap: 14px;
+    margin: 0;
+  }
+}
