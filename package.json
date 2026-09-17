@@ -1,0 +1,19 @@
+{
+  "name": "tpq-miftahul-huda-project",
+  "version": "1.0.0",
+  "description": "Website profil Taman Pendidikan Al-Qur'an Miftahul Huda — Perumahan Taman Cherry, Luwung, Mundu, Cirebon.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miawcream19/TPQ-Miftahul-Huda.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/miawcream19/TPQ-Miftahul-Huda/issues"
+  },
+  "homepage": "https://github.com/miawcream19/TPQ-Miftahul-Huda#readme"
+}
